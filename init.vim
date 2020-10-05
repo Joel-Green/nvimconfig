@@ -28,6 +28,8 @@ filetype plugin on
 " search smartcase
 set ignorecase
 set smartcase
+" continue search from the top
+set wrapscan
 
 " set tab spaces
 set smarttab
