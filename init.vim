@@ -25,9 +25,12 @@ call plug#end()
 
 filetype plugin on
 
+" search smartcase
+set ignorecase
+set smartcase
+
 " set tab spaces
 set smarttab
-set smartcase
 set smartindent
 set tabstop=4
 set shiftwidth=4
