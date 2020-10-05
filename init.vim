@@ -8,6 +8,9 @@ Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
@@ -24,6 +27,7 @@ filetype plugin on
 
 " set tab spaces
 set smarttab
+set smartcase
 set smartindent
 set tabstop=4
 set shiftwidth=4
