@@ -96,6 +96,8 @@ noremap <silent><leader>t :NERDTreeToggle<CR>
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><leader><space> :FZF<CR>
 
+let g:fzf_preview_window = ''
+
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -106,15 +108,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " let g:NERDTreeIgnore = ['^node_modules$']
 
 """COC configuration
-
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs', ] 
-"   \ 'coc-tsserver',
-"   \ 'coc-eslint', 
-"   \ 'coc-prettier', 
-"   \ 'coc-json', 
-"   ]
 
 """"
 """" COC default config
