@@ -1,3 +1,5 @@
+let mapleader = "\<Space>"
+
 call plug#begin()
 
 Plug 'neoclide/coc.nvim'
@@ -25,6 +27,12 @@ Plug 'kevinoid/vim-jsonc'
 call plug#end()
 
 filetype plugin on
+
+
+nnoremap <silent> <leader>u :<C-u>NgSwitchTS<CR>
+nnoremap <silent> <leader>i :<C-u>NgSwitchHTML<CR>
+nnoremap <silent> <leader>o :<C-u>NgSwitchCSS<CR>
+nnoremap <silent> <leader>p :<C-u>NgSwitchSpec<CR>
 
 " search smartcase
 set ignorecase
@@ -54,10 +62,9 @@ let g:lightline = {
       \ 'colorscheme': 'monokai_pro',
       \ }
 
-"ng switcher 
-nnoremap <Leader>u :<C-u>NgSwitchTS<CR>
-nnoremap <Leader>i :<C-u>NgSwitchHTML<CR>
-nnoremap <Leader>y :<C-u>NgSwitchCSS<CR>
+
+
+
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -79,7 +86,6 @@ set undodir=/home/shaw/.config/nvim/undo-dir
 set undofile
 
 " map space to leader key
-let mapleader = "\<Space>"
 
 noremap <silent><leader>t :NERDTreeToggle<CR>
 noremap <silent><C-p> :FZF<CR>
@@ -252,16 +258,17 @@ nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+
+" Find symbol of current document.
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 
