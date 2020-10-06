@@ -34,6 +34,11 @@ nnoremap <silent> <leader>i :<C-u>NgSwitchHTML<CR>
 nnoremap <silent> <leader>o :<C-u>NgSwitchCSS<CR>
 nnoremap <silent> <leader>p :<C-u>NgSwitchSpec<CR>
 
+"
+" commentary
+autocmd FileType typescript setlocal commentstring=//\ %s
+
+
 " search smartcase
 set ignorecase
 set smartcase
