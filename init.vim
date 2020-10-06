@@ -4,6 +4,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'phanviet/vim-monokai-pro'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'softoika/ngswitcher.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
@@ -52,6 +53,11 @@ colorscheme monokai_pro
 let g:lightline = {
       \ 'colorscheme': 'monokai_pro',
       \ }
+
+"ng switcher 
+nnoremap <Leader>u :<C-u>NgSwitchTS<CR>
+nnoremap <Leader>i :<C-u>NgSwitchHTML<CR>
+nnoremap <Leader>y :<C-u>NgSwitchCSS<CR>
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
