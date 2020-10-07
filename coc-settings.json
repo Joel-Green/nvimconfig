@@ -20,6 +20,6 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets":false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces":true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis":false,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces":true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces":false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces":true
 }

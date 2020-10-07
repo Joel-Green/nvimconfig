@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'phanviet/vim-monokai-pro'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'APZelos/blamer.nvim'
 Plug 'softoika/ngswitcher.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
@@ -27,6 +28,29 @@ Plug 'kevinoid/vim-jsonc'
 call plug#end()
 
 filetype plugin on
+
+set wildmenu
+set wildmode=full
+let g:blamer_enabled = 1
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_show_in_insert_modes = 0
+
+
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-w>z :ZoomToggle<CR>
+
 
 
 nnoremap <silent> <leader>u :<C-u>NgSwitchTS<CR>
