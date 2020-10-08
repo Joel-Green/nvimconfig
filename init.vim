@@ -2,6 +2,7 @@ let mapleader = "\<Space>"
 
 call plug#begin()
 
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim'
 Plug 'phanviet/vim-monokai-pro'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -10,6 +11,8 @@ Plug 'APZelos/blamer.nvim'
 Plug 'softoika/ngswitcher.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
@@ -34,6 +37,9 @@ set wildmode=full
 let g:blamer_enabled = 1
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_show_in_insert_modes = 0
+
+
+let g:NERDTreeGitStatusUseNerdFonts = 1
 
 
 " Zoom / Restore window.
