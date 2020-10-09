@@ -29,6 +29,30 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 filetype plugin on
+set termguicolors
+colorscheme monokai_pro
+
+" search smartcase
+set ignorecase
+set smartcase
+" continue search from the top
+set wrapscan
+
+" set tab spaces
+set smarttab
+set smartindent
+set tabstop=4
+set shiftwidth=4
+" always uses spaces instead of tab characters
+set expandtab
+
+set encoding=UTF-8
+
+set number
+set updatetime=100
+
+set mouse=a
+
 
 set cursorline
 
@@ -76,29 +100,6 @@ nnoremap <silent> <leader>p :<C-u>NgSwitchSpec<CR>
 autocmd FileType typescript setlocal commentstring=//\ %s
 
 
-" search smartcase
-set ignorecase
-set smartcase
-" continue search from the top
-set wrapscan
-
-" set tab spaces
-set smarttab
-set smartindent
-set tabstop=4
-set shiftwidth=4
-" always uses spaces instead of tab characters
-set expandtab
-
-set encoding=UTF-8
-
-set number
-set updatetime=100
-
-set mouse=a
-
-set termguicolors
-colorscheme monokai_pro
 
 let g:lightline = {
       \ 'colorscheme': 'monokai_pro',
