@@ -30,6 +30,8 @@ call plug#end()
 
 filetype plugin on
 
+set cursorline
+
 set wildmenu
 set wildmode=full
 "Git Blamer Config
