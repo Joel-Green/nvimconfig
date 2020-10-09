@@ -42,8 +42,8 @@ let g:blamer_show_in_insert_modes = 0
 let g:indentLine_char= "│"
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-set list
+" set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" set list
 
 let g:NERDTreeGitStatusUseNerdFonts = 1
 
