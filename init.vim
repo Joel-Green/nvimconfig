@@ -21,12 +21,11 @@ Plug 'tpope/vim-repeat'
 Plug 'yggdroot/indentline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kevinoid/vim-jsonc'
+Plug 'mhinz/vim-signify'
+Plug 'herringtondarkholme/yats.vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
 
-if has('nvim') || has('patch-8.0.902')
-  Plug 'mhinz/vim-signify'
-else
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-endif
 call plug#end()
 
 filetype plugin on
