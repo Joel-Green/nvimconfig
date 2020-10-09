@@ -18,26 +18,32 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'yggdroot/indentline'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kevinoid/vim-jsonc'
 
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
-
-Plug 'ryanoasis/vim-devicons'
-Plug 'kevinoid/vim-jsonc'
-
 call plug#end()
 
 filetype plugin on
 
 set wildmenu
 set wildmode=full
+"Git Blamer Config
 let g:blamer_enabled = 1
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_show_in_insert_modes = 0
 
+" Indent Guides config
+let g:indentLine_char= "│"
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
 
 let g:NERDTreeGitStatusUseNerdFonts = 1
 
