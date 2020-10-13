@@ -5,13 +5,14 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'tpope/vim-vinegar'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'APZelos/blamer.nvim'
 Plug 'softoika/ngswitcher.vim'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,8 +26,21 @@ Plug 'mhinz/vim-signify'
 Plug 'herringtondarkholme/yats.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'sirver/ultisnips'
 
 call plug#end()
+
+
+" tree-view
+let g:netrw_liststyle = 3
+
+let g:netrw_winsize = 33
+
+" sort is affecting only: directories on the top, files below
+let g:netrw_sort_sequence = '[\/]$,*'
+
+" use the previous window to open file
+let g:netrw_browse_split = 4
 
 filetype plugin on
 set termguicolors
@@ -53,6 +67,10 @@ set updatetime=100
 
 set mouse=a
 
+"Ultisnip cofiguration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 set cursorline
 
@@ -70,7 +88,7 @@ let g:indentLine_leadingSpaceEnabled = 1
 " set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 " set list
 
-let g:NERDTreeGitStatusUseNerdFonts = 1
+" let g:NERDTreeGitStatusUseNerdFonts = 1
 
 
 " Zoom / Restore window.
@@ -110,7 +128,6 @@ let g:lightline = {
 
 
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-emmet',
@@ -130,11 +147,12 @@ set undofile
 
 " map space to leader key
 
-noremap <silent><leader>t :NERDTreeToggle<CR>
+" noremap <silent><leader>t :NERDTreeToggle<CR>
+noremap <silent><leader>t :Lexplore<CR>
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><leader><space> :FZF<CR>
 
-let g:fzf_preview_window = ''
+let g:fzf_preview_window = 'right:60%'
 
 
 " j/k will move virtual lines (lines that wrap)
