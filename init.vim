@@ -6,6 +6,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tpope/vim-vinegar'
+" Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'APZelos/blamer.nvim'
@@ -21,20 +22,22 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'yggdroot/indentline'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kevinoid/vim-jsonc'
 Plug 'mhinz/vim-signify'
 Plug 'herringtondarkholme/yats.vim'
+Plug 'elzr/vim-json'
 " Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
 
 call plug#end()
 
+set termguicolors
+colorscheme monokai_pro
 
 " tree-view
 let g:netrw_liststyle = 3
 
-let g:netrw_winsize = 33
+" let g:netrw_winsize = 33
 
 " sort is affecting only: directories on the top, files below
 let g:netrw_sort_sequence = '[\/]$,*'
@@ -43,8 +46,6 @@ let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_browse_split = 4
 
 filetype plugin on
-set termguicolors
-colorscheme monokai_pro
 
 " search smartcase
 set ignorecase
@@ -55,14 +56,16 @@ set wrapscan
 " set tab spaces
 set smarttab
 set smartindent
-set tabstop=4
 set shiftwidth=4
-" always uses spaces instead of tab characters
+set tabstop=4
+set softtabstop=0 
 set expandtab
+
 
 set encoding=UTF-8
 
 set number
+" set relativenumber
 set updatetime=100
 
 set mouse=a
@@ -82,10 +85,20 @@ let g:blamer_show_in_visual_modes = 0
 let g:blamer_show_in_insert_modes = 0
 
 " Indent Guides config
+" let g:vim_json_syntax_conceal = 2
 let g:indentLine_char= "│"
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
+
+" autocmd Filetype json
+"   \ let g:indentLine_setConceal = 0 |
+"   \ let g:vim_json_syntax_conceal = 0
+
+" set list
 " set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" let g:indent_guides_start_level=2
+" let g:indent_guides_guide_size=1
+" let g:indent_guides_enable_on_vim_startup = 1
 " set list
 
 " let g:NERDTreeGitStatusUseNerdFonts = 1
@@ -93,15 +106,15 @@ let g:indentLine_leadingSpaceEnabled = 1
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-w>z :ZoomToggle<CR>
@@ -129,6 +142,7 @@ let g:lightline = {
 
 let g:coc_global_extensions = [
   \ 'coc-pairs',
+  \ 'coc-eslint', 
   \ 'coc-tsserver',
   \ 'coc-emmet',
   \ 'coc-cssmodules',
