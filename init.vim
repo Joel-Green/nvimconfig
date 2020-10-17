@@ -28,6 +28,7 @@ Plug 'elzr/vim-json'
 " Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
