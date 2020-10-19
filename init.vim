@@ -32,6 +32,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
+set title titlestring=%(%{expand(\"%:~:.:h\")}%)/%t\ -\ Vim
+
 set termguicolors
 colorscheme monokai_pro
 
