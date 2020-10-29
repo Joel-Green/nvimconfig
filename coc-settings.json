@@ -1,6 +1,17 @@
 {
   "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "html",
+    "css",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "javascript.jsx",
+    "graphql"
+  ],
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
   "typescript.showUnused": true,
